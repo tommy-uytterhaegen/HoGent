@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36616.10 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2025_S1_MonoGame_Pikachu", "2025_S1_MonoGame_Pikachu\2025_S1_MonoGame_Pikachu.csproj", "{7AFDF46D-8D20-48BE-B247-73423C625F85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7AFDF46D-8D20-48BE-B247-73423C625F85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AFDF46D-8D20-48BE-B247-73423C625F85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AFDF46D-8D20-48BE-B247-73423C625F85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AFDF46D-8D20-48BE-B247-73423C625F85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A1B4806-1C15-4015-BCCA-D88B7C973CEA}
+	EndGlobalSection
+EndGlobal
