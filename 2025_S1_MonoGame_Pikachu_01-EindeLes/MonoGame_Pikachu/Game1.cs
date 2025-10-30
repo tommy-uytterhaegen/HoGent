@@ -1,11 +1,11 @@
-﻿using _2025_S1_MonoGame_Pikachu.Extensions;
+﻿using MonoGame_Pikachu.Extensions;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 
-namespace _2025_S1_MonoGame_Pikachu
+namespace MonoGame_Pikachu
 {
     public class Game1 : Game
     {

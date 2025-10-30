@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace _2025_S1_MonoGame_Pikachu.Extensions
+namespace MonoGame_Pikachu.Extensions
 {
     public static class SpriteBatchExtensions
     {
