@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using _2025_S1_MonoGame_Pikachu.Extensions;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -6,8 +7,14 @@ namespace _2025_S1_MonoGame_Pikachu
 {
     public class Game1 : Game
     {
+        private const int PLAYER_STEP = 3;
+
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+
+        private Texture2D _player;
+
+        private Vector2 _playerPosition;
 
         public Game1()
         {
@@ -18,7 +25,7 @@ namespace _2025_S1_MonoGame_Pikachu
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            _playerPosition = new Vector2(0, 0);
 
             base.Initialize();
         }
@@ -27,15 +34,27 @@ namespace _2025_S1_MonoGame_Pikachu
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+            _player = Content.Load<Texture2D>("surfing-pikachu");
+
         }
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed 
+                || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
+            if (Keyboard.GetState().IsKeyDown(Keys.D)) // Right
+                _playerPosition.X += PLAYER_STEP;
+
+            if (Keyboard.GetState().IsKeyDown(Keys.Q)) // Left
+                _playerPosition.X -= PLAYER_STEP;
+
+            if (Keyboard.GetState().IsKeyDown(Keys.Z)) // Up
+                _playerPosition.Y -= PLAYER_STEP;
+
+            if (Keyboard.GetState().IsKeyDown(Keys.S)) // Down
+                _playerPosition.Y += PLAYER_STEP;
 
             base.Update(gameTime);
         }
@@ -44,7 +63,11 @@ namespace _2025_S1_MonoGame_Pikachu
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            _spriteBatch.Begin();
+
+            _spriteBatch.Draw(_player, _playerPosition);
+
+            _spriteBatch.End();
 
             base.Draw(gameTime);
         }
