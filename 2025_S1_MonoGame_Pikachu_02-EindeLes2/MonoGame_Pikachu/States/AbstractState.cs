@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace MonoGame_Pikachu.States
 {
+    // More information about the 'State Pattern' can be found here: https://refactoring.guru/design-patterns/state
     public abstract class AbstractState(Game1 context) 
     {
         protected Game1 Context { get; } = context;
