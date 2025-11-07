@@ -33,16 +33,23 @@ namespace MonoGame_Pikachu
         internal List<Vector2> _sharkPositions;
 
         private AbstractState _currentState;
-        internal void ChangeState(AbstractState newState)
-        {
-            _currentState = newState;
-        }
+
+        #region Constructor
 
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
+        }
+
+        #endregion
+
+        // The State themselves will change the state. They are the ones who know what states they can move to.
+        internal void ChangeState(AbstractState newState)
+        {
+            // Trust that the state that is setting the new state knows what it is doing, so no validation. They know more than the context (Game1.cs)
+            _currentState = newState;
         }
 
         protected override void Initialize()
@@ -52,7 +59,7 @@ namespace MonoGame_Pikachu
             _graphics.PreferredBackBufferHeight = 720;
             _graphics.ApplyChanges(); // Don't forget to apply, will not set otherwise.
 
-            // Reset all variables
+            // This is the only state that Game1 has to know about: the start of it all
             ChangeState(new StartScreenState(this));
 
             base.Initialize();
@@ -77,7 +84,8 @@ namespace MonoGame_Pikachu
             // No matter which state, we always check if the user wants to exit the game
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            
+
+            // There is only 1 Update method to call: the one for the active state and Game1 doesn't care what is behind it
             _currentState?.Update(gameTime);
 
             base.Update(gameTime);
@@ -89,6 +97,7 @@ namespace MonoGame_Pikachu
 
             _spriteBatch.Begin();
 
+            // There is only 1 draw method to call: the one for the active state and Game1 doesn't care what is behind it
             _currentState?.Draw(gameTime);
 
             _spriteBatch.End();

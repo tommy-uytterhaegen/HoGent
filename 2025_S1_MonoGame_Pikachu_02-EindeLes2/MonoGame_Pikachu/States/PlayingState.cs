@@ -1,13 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using MonoGame_Pikachu.Extensions;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace MonoGame_Pikachu.States
 {
@@ -66,12 +60,8 @@ namespace MonoGame_Pikachu.States
 
                     // If the player has no lives left change state to gameover
                     if (Context._numberOfRemainLives == 0)
-                    {
                         Context.ChangeState(new GameOverState(Context));
-                        continue; // State changed, we don't need to do the rest of the loop
-                    }
-                    // Still have lives left, so just remove the shark
-                    else
+                    else // Still have lives left, so just remove the shark
                         Context._sharkPositions.RemoveAt(i);
                 }
             }
