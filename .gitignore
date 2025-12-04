@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
@@ -50,3 +50,11 @@
 /2025_S1_Maui_Jokes_EindeLes1/MauiJokesBL/obj
 /2025_S1_Maui_Jokes_EindeLes1/MauiJokesDL/bin/Debug/net9.0
 /2025_S1_Maui_Jokes_EindeLes1/MauiJokesDL/obj
+2025_S1_Maui_Jokes_BeginLes2/.vs/
+2025_S1_Maui_Jokes_BeginLes2/MauiJokes/bin/
+2025_S1_Maui_Jokes_BeginLes2/MauiJokes/obj/
+2025_S1_Maui_Jokes_BeginLes2/MauiJokesBL/bin/
+2025_S1_Maui_Jokes_BeginLes2/MauiJokesBL/obj/
+2025_S1_Maui_Jokes_BeginLes2/MauiJokesDL/bin/
+2025_S1_Maui_Jokes_BeginLes2/MauiJokesDL/obj/
+2025_S1_Maui_Jokes_EindeLes2_Prep/.vs/
