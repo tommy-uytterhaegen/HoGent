@@ -55,6 +55,8 @@ namespace MauiJokesDL
 
         public bool Delete(string joke)
         {
+            // We gebruiken de 'DeleteMany' ook al weten we dat we maar 1 zullen verwijderen omdat er een predicate gebruikt wordt. LiteDB heeft geen idee dat
+            // dit zal resulteren in maar 1 deleted joke
             var deletionCount = Jokes.DeleteMany(x => x.Text == joke);
             if (deletionCount > 0)
                 return true;
