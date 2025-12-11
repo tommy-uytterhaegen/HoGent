@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HoGentMaui.MainPage">
+
+    <Border
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        WidthRequest="400">
+        
+        <!-- Zet een schaduw rond Border -->
+        <Border.Shadow>
+            <Shadow Brush="Black"
+                    Opacity="0.7"
+                    Radius="12" />
+        </Border.Shadow>
+        
+        <!-- Zorgt ervoor dat we kunnen scrollen als er meer content verticaal is dan scherm -->
+        <ScrollView Orientation="Vertical">
+
+            <!-- 'Padding' is binnen de view, zoals je tekst op een pagina niet aan de rand beginnen 
+                 'Spacing' is tussen de items in de control, in dit geval vertikaal -->
+            <VerticalStackLayout 
+                BackgroundColor="LightSteelBlue"
+                Padding="16"
+                Spacing="16">
+
+                <!-- 'FontSize' kan een getal zijn, maar ook een type (Small, Micro, ...) -->
+                <Label 
+                        FontSize="10"
+                        Text="WILLEKEURIGE GRAP"
+                        FontAttributes="Bold" />
+
+                <!-- 'Grid' is een Excel achtige layout. Hoe de rijen moeten opgebouwd zijn doe je met 'RowDefinition', hoe de kolommen opgebouwd zijn met 'ColumnDefinition'
+                        'Auto' -> Hij zal berekenen hoeveel plaat er nodig is
+                        * -> Neemt zoveel plaats als beschikbaar is
+                        50 -> Vaste waarde van 50. Te klein, te groot? Maakt niet uit, blijft 50
+                -->
+                <Grid 
+                    RowDefinitions="Auto" 
+                    ColumnDefinitions="*,Auto">
+                    
+                    <Label 
+                        Grid.Row="0" Grid.Column="0"
+                        x:Name="JokeLabel"
+                        HorizontalOptions="Center"
+                        Text="?"/>
+
+                    <Button 
+                        Grid.Row="0" Grid.Column="1" 
+                        x:Name="DeleteJokeButton"
+                        Text="Delete"
+                        Clicked="DeleteJokeButton_Clicked"/>
+                    
+                </Grid>
+
+                <Button 
+                    x:Name="RandomJokeButton"
+                    HorizontalOptions="Center"
+                    Text="Willekeurige Grap"
+                    BorderColor="Black"
+                    BorderWidth="1"
+                    Clicked="RandomJokeButton_Clicked">
+
+                    <!-- We kunnen ook LinearGradient backgrounds maken door gebruik te maken van de LinearGradientBrush (Er is ook nog een RadialGradient) -->
+                    <Button.Background>
+                        <LinearGradientBrush 
+                            StartPoint="0,0"
+                            EndPoint="1,1">
+                            <GradientStop 
+                                Color="LightSteelBlue"
+                                Offset="0.1" />
+                            <GradientStop 
+                                Color="SteelBlue"
+                                Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    
+                </Button>
+
+                <!-- 'Margin' is plaats rond de control (aan de buitenkant). We geven de getallen mee in volgorde 'links', 'boven', 'rechts', 'onder' -->
+                <Label 
+                    FontSize="Micro"
+                    Text="NIEUWE GRAP"
+                    FontAttributes="Bold"
+                    Margin="0,16,0,0"/>
+                    
+                <HorizontalStackLayout
+                    HorizontalOptions="Center"
+                    Spacing="16">
+
+                    <Entry 
+                        x:Name="NewJokeEntry"
+                        WidthRequest="150"
+                        BackgroundColor="White"/>
+
+                    <Button 
+                        x:Name="AddJokeButton"
+                        BackgroundColor="Black"
+                        TextColor="White"
+                        Text="+"
+                        Clicked="AddJokeButton_Clicked"/>
+                    
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+
+        </ScrollView>
+    </Border>
+</ContentPage>
