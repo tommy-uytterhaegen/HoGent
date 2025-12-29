@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HoGentMaui.DetailPage"
+             Title="DetailPage">
+    <VerticalStackLayout>
+        <!-- We binden de Label.Text aan de 'JokeText' property. Dit wil zeggen dat als de JokeText property wijzigt, dat de label tekst ook geupdate wordt (Dankzij INotifyPropertyChanged).-->
+        <Label 
+            Text="{Binding JokeText}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>
